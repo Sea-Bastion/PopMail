@@ -15,11 +15,16 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         PrimaryStage = stage;
 
-        URL LoginPath = getClass()./*getClassLoader().*/getResource("Login.fxml");
-        if(LoginPath == null);
-        Parent Login = FXMLLoader.load(LoginPath);
+        try {
+            URL LoginPath = getClass()./*getClassLoader().*/getResource("Login.fxml");
+            if (LoginPath == null) throw new NullPointerException();
+            Parent Login = FXMLLoader.load(LoginPath);
+            PrimaryStage.setScene(new Scene(Login, 500, 600));
 
-        PrimaryStage.setScene(new Scene(Login, 500, 600));
+        }catch(Exception e){
+            new ErrorWin("boop", "bop");
+        }
+
         PrimaryStage.show();
     }
 

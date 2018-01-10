@@ -9,7 +9,7 @@
 <?import javafx.scene.image.ImageView?>
 <StackPane xmlns="http://javafx.com/javafx"
            xmlns:fx="http://javafx.com/fxml"
-           fx:controller="PopMail.Login"
+           fx:controller="PopMail.Controllers.Login"
            prefHeight="400.0" prefWidth="600.0">
 
     <VBox>
