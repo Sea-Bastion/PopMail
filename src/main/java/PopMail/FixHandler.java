@@ -1,5 +1,9 @@
 package PopMail;
 
 public interface FixHandler {
-    int FixHandle();
+	/**
+	 *
+	 * @return true for success and false for fail
+	 */
+	boolean FixHandle();
 }

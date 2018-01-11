@@ -10,29 +10,30 @@ import java.net.URL;
 
 public class Main extends Application {
 
-    private Stage PrimaryStage;
+	private Stage PrimaryStage;
 
-    public void start(Stage stage) throws Exception {
-        PrimaryStage = stage;
+	public void start(Stage stage) throws Exception {
+		PrimaryStage = stage;
 
-        try {
-            URL LoginPath = getClass()./*getClassLoader().*/getResource("Login.fxml");
-            if (LoginPath == null) throw new NullPointerException();
-            Parent Login = FXMLLoader.load(LoginPath);
-            PrimaryStage.setScene(new Scene(Login, 500, 600));
 
-        }catch(Exception e){
-            new ErrorWin("boop", "bop");
-        }
+		try {
+			URL LoginPath = getClass()./*getClassLoader().*/getResource("Login.fxml");
+			if (LoginPath == null) throw new NullPointerException();
+			Parent Login = FXMLLoader.load(LoginPath);
+			PrimaryStage.setScene(new Scene(Login, 500, 600));
 
-        PrimaryStage.show();
-    }
+		}catch(Exception e){
+			new ErrorWin("boop", "bop", () -> false);
+		}
 
-    public Stage getPrimaryStage() {
-        return PrimaryStage;
-    }
+		PrimaryStage.show();
+	}
 
-    public static void main(String args[]){
-        launch(args);
-    }
+	public Stage getPrimaryStage() {
+		return PrimaryStage;
+	}
+
+	public static void main(String args[]){
+		launch(args);
+	}
 }
