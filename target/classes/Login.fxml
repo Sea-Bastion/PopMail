@@ -7,23 +7,30 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
 <StackPane xmlns="http://javafx.com/javafx"
            xmlns:fx="http://javafx.com/fxml"
            fx:controller="PopMail.Controllers.Login"
-           prefHeight="400.0" prefWidth="600.0">
+           stylesheets="css/buttons.css, css/Login.css"
+           prefHeight="400.0" prefWidth="350.0">
 
-    <VBox>
-        <ImageView/>
-        <VBox>
-            <Label text="Username"/>
-            <TextField promptText="Username"/>
-        </VBox>
-        <VBox>
-            <Label text="Password"/>
-            <TextField promptText="Password"/>
-        </VBox>
-        <CheckBox text="Remember me"/>
-        <Button text="Login"/>
-    </VBox>
+	<VBox alignment="CENTER">
+		<padding><Insets topRightBottomLeft="50"/></padding>
+		<ImageView/>
+		<VBox>
+			<padding><Insets bottom="20"/></padding>
+			<Label text="Username"/>
+			<TextField promptText="Username"/>
+		</VBox>
+		<VBox>
+			<Label text="Password"/>
+			<TextField promptText="Password"/>
+		</VBox>
+		<VBox alignment="BASELINE_RIGHT" spacing="10">
+			<padding><Insets topRightBottomLeft="10"/></padding>
+			<CheckBox text="Remember me"/>
+			<Button text="Login"/>
+		</VBox>
+	</VBox>
 
 </StackPane>

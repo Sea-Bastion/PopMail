@@ -75,7 +75,7 @@ public class ErrorWin {
 			final IntBuffer work = IntBuffer.allocate(1);
 			new Thread(() ->{
 				synchronized (work) {
-					work.put(FixFunc.FixHandle()? 1:0);
+					work.put(FixFunc.FixHandle(TitleLabel, DescriptionLabel)? 1:0);
 					work.notifyAll();
 				}
 			}).start();
@@ -96,17 +96,7 @@ public class ErrorWin {
 				}
 			}
 
-			int workint = work.array()[0];
-			switch (workint){
-				case 0:
-					Error2("Failure", "Failed to fix program please restart or contact Sebastian.Cypert@gmail.com");
-					break;
-
-				case 1:
-					window.close();
-					break;
-			}
-
+			if(work.array()[0] == 1) window.close();
 
 		}
 

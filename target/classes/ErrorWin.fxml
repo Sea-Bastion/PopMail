@@ -10,35 +10,31 @@
 <?import javafx.scene.layout.VBox?>
 
 <StackPane minHeight="150.0"
-           prefWidth="350.0"
-           xmlns="http://javafx.com/javafx/8.0.121"
-           xmlns:fx="http://javafx.com/fxml/1">
+			prefWidth="450.0"
+			xmlns="http://javafx.com/javafx/8.0.60"
+			xmlns:fx="http://javafx.com/fxml/1"
+			stylesheets="css/buttons.css">
 
-    <HBox spacing="15">
-        <padding><Insets topRightBottomLeft="15" /></padding>
-        <ImageView fitHeight="50" preserveRatio="true">
-            <image>
-                <Image url="@error-symbol.png" />
-            </image>
-        </ImageView>
-        <VBox spacing="15">
-            <padding><Insets topRightBottomLeft="10"/> </padding>
-            <Label fx:id="TitleLabel" text="Title"/>
-            <Label fx:id="DescriptionLabel" text="Description"/>
-        </VBox>
-    </HBox>
+	
+	<HBox spacing="15">
+		<padding><Insets topRightBottomLeft="15" /></padding>
+		<ImageView fitHeight="50" preserveRatio="true">
+			<image>
+				<Image url="@error-symbol.png" />
+			</image>
+		</ImageView>
+		<VBox spacing="15">
+			<padding><Insets topRightBottomLeft="10"/> </padding>
+			<Label fx:id="TitleLabel" text="Title"/>
+			<Label fx:id="DescriptionLabel" text="Description" wrapText="true"/>
+		</VBox>
+	</HBox>
 
-    <HBox alignment="BOTTOM_RIGHT" spacing="10" fx:id="Buttons" visible="false">
-        <padding><Insets topRightBottomLeft="15" /> </padding>
-        <Button onAction="#Fix" text="Attempt to fix" />
-        <Button onAction="#Kill" text="Kill" textFill="red" />
-    </HBox>
-
-    <ImageView fitWidth="320" preserveRatio="true">
-        <image>
-            <Image/>
-        </image>
-    </ImageView>
+	<HBox alignment="BOTTOM_RIGHT" spacing="10">
+		<padding><Insets topRightBottomLeft="15" /> </padding>
+		<Button onAction="#Fix" fx:id="FixButton" text="Attempt to fix" visible="false"/>
+		<Button onAction="#Kill" fx:id="KillButton" text="Kill" textFill="red" />
+	</HBox>
 
 
 </StackPane>

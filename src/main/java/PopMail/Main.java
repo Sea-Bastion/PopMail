@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.net.URL;
 
 public class Main extends Application {
@@ -15,15 +16,16 @@ public class Main extends Application {
 	public void start(Stage stage) throws Exception {
 		PrimaryStage = stage;
 
+		URL LoginPath = getClass().getClassLoader().getResource("Login.fxml");
 
 		try {
-			URL LoginPath = getClass()./*getClassLoader().*/getResource("Login.fxml");
 			if (LoginPath == null) throw new NullPointerException();
 			Parent Login = FXMLLoader.load(LoginPath);
-			PrimaryStage.setScene(new Scene(Login, 500, 600));
+			PrimaryStage.setScene(new Scene(Login));
 
 		}catch(Exception e){
-			new ErrorWin("boop", "bop", () -> false);
+			new ErrorWin("Unable to load login", "Missing file, please uninstall and reinstall program"+
+				System.lineSeparator() + "if you still have problems contact Sebastian.cypert@gmail.com");
 		}
 
 		PrimaryStage.show();

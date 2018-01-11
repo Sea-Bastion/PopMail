@@ -10,10 +10,10 @@
 <?import javafx.scene.layout.VBox?>
 
 <StackPane minHeight="150.0"
-			prefWidth="400.0"
+			prefWidth="450.0"
 			xmlns="http://javafx.com/javafx/8.0.60"
 			xmlns:fx="http://javafx.com/fxml/1"
-			stylesheets="css/ErrorWin.css">
+			stylesheets="css/buttons.css">
 
 	
 	<HBox spacing="15">
