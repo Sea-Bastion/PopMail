@@ -34,6 +34,9 @@ public class ErrorWin {
 
 		window = new Stage();
 		window.setTitle("ERROR");
+		window.setOnCloseRequest(e -> System.exit(1));
+		window.setResizable(false);
+		window.setAlwaysOnTop(true);
 
 		try {
 			URL ErrorPath = getClass().getClassLoader().getResource("ErrorWin.fxml");
@@ -46,7 +49,7 @@ public class ErrorWin {
 		}catch(Exception e){
 			System.err.println("The Error popup encountered an error LMAO");
 			e.printStackTrace();
-			System.exit(9999);
+			System.exit(420);
 		}
 
 	}
