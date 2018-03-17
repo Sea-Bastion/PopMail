@@ -1,14 +1,12 @@
-.button {
+.button, .check-box .box {
 	-fx-background-radius: 0px;
-	-fx-background-color: #cacaca
+	-fx-background-color: #eaeaea
 }
 
-.button:hover {
+.button:hover, .check-box .box:hover {
+	-fx-background-color: #efefef
+}
+
+.button:pressed, .check-box .box:pressed {
 	-fx-background-color: #dadada
 }
-
-.button:pressed {
-	-fx-background-color: #bababa
-}
-
-

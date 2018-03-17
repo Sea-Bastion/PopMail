@@ -6,12 +6,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.File;
+import javax.mail.Session;
+import javax.mail.Store;
 import java.net.URL;
 
 public class Main extends Application {
 
 	private Stage PrimaryStage;
+	static Session session;
+	static Store store;
 
 	public void start(Stage stage) throws Exception {
 		PrimaryStage = stage;
