@@ -1,5 +1,6 @@
 package PopMail;
 
+import PopMail.Classes.ErrorWin;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,32 +11,16 @@ import javax.mail.Session;
 import javax.mail.Store;
 import java.net.URL;
 
+import static PopMail.Controllers.Login.LoadLogin;
+
 public class Main extends Application {
 
-	private Stage PrimaryStage;
 	static Session session;
 	static Store store;
 
 	public void start(Stage stage) throws Exception {
-		PrimaryStage = stage;
-
-		URL LoginPath = getClass().getClassLoader().getResource("Login.fxml");
-
-		try {
-			if (LoginPath == null) throw new NullPointerException();
-			Parent Login = FXMLLoader.load(LoginPath);
-			PrimaryStage.setScene(new Scene(Login));
-
-		}catch(Exception e){
-			new ErrorWin("Unable to load login", "Missing file, please uninstall and reinstall program"+
-				System.lineSeparator() + "if you still have problems contact Sebastian.cypert@gmail.com");
-		}
-
-		PrimaryStage.show();
-	}
-
-	public Stage getPrimaryStage() {
-		return PrimaryStage;
+		LoadLogin(stage);
+		stage.show();
 	}
 
 	public static void main(String args[]){

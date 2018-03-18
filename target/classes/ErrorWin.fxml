@@ -13,7 +13,7 @@
 			prefWidth="450.0"
 			xmlns="http://javafx.com/javafx/8.0.60"
 			xmlns:fx="http://javafx.com/fxml/1"
-			stylesheets="css/buttons.css">
+			stylesheets="css/theme.css">
 
 	
 	<HBox spacing="15">
@@ -34,6 +34,7 @@
 		<padding><Insets topRightBottomLeft="15" /> </padding>
 		<Button onAction="#Fix" fx:id="FixButton" text="Attempt to fix" visible="false"/>
 		<Button onAction="#Kill" fx:id="KillButton" text="Kill" textFill="red" />
+		<Button onAction="#Continue" fx:id="ContinueButton" text="Continue" visible="false"/>
 	</HBox>
 
 

@@ -1,5 +1,6 @@
-package PopMail;
+package PopMail.Classes;
 
+import PopMail.FixHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,16 +20,17 @@ public class ErrorWin {
 	private String Title;
 	private String Description;
 	private FixHandler FixFunc;
-	private boolean CanFix;
+	private boolean CanContinue;
 	
-	ErrorWin(String Title, String Description){
-		this(Title, Description, null);
+	public ErrorWin(String Title, String Description, boolean CanContinue){
+		this(Title, Description, CanContinue, null);
 	}
 
-	ErrorWin(String Title, String Description, FixHandler FixFunc){
+	public ErrorWin(String Title, String Description, boolean CanContinue, FixHandler FixFunc){
 
 		this.Title = Title;
 		this.Description = Description;
+		this.CanContinue = CanContinue;
 		this.FixFunc = FixFunc;
 
 		window = new Stage();
@@ -63,10 +65,17 @@ public class ErrorWin {
 		Button FixButton;
 		@FXML
 		Button KillButton;
+		@FXML
+		Button ContinueButton;
 
 		@FXML
 		void Kill(ActionEvent event){
 			System.exit(1);
+		}
+
+		@FXML
+		void Continue(ActionEvent event){
+			window.close();
 		}
 
 		@FXML
@@ -112,6 +121,10 @@ public class ErrorWin {
 			DescriptionLabel.setText(Description);
 
 			if(FixFunc != null) FixButton.setVisible(true);
+			if(CanContinue) {
+				ContinueButton.setVisible(true);
+				KillButton.setVisible(false);
+			}
 		}
 	}
 }
