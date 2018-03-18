@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
 
+	FileName: Browser.fxml
+	Author(s): Sebastian Cypert
+	Jobs: defines the scene layout for the Email browser window
+
+-->
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
+<BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="PopMail.Controllers.Browser"
-            prefHeight="400.0" prefWidth="600.0">
+            fx:controller="PopMail.Controllers.Browser">
 
-</AnchorPane>
+	<center>
+		<HBox>
+			<ScrollPane minWidth="220">
+				<VBox fx:id="SelectorBox"/>
+			</ScrollPane>
+			<StackPane prefWidth="Infinity" fx:id="EmailView"/>
+		</HBox>
+	</center>
+</BorderPane>

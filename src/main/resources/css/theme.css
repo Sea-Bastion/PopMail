@@ -1,3 +1,10 @@
+/*
+
+	FileName: theme.css
+	Author(s): Sebastian Cypert
+	Jobs: defines the theme and style for all of the application. most scenes include it.
+
+*/
 .root{
 	-fx-background-color: #2b2b2b
 }

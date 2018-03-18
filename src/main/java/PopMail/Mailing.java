@@ -1,3 +1,10 @@
+/*
+
+	FileName: Mailing.java
+	Author(s): Sebastian Cypert
+	Job: contains static functions need for mailing such as a send function or a login function
+
+ */
 package PopMail;
 
 import PopMail.Classes.ErrorWin;
@@ -18,7 +25,6 @@ public class Mailing {
 		try {
 			Main.store = Main.session.getStore("imaps");
 			Main.store.connect("imap.gmail.com", Username, Password);
-			System.out.println(Main.store);
 			return true;
 
 		}catch(AuthenticationFailedException e){
@@ -26,8 +32,7 @@ public class Mailing {
 
 		}catch(Exception e){
 			new ErrorWin("An unknown error has occurred",
-					"reinstall of contact developers if this continues" + System.lineSeparator() +
-					"check stdout for more information.", false);
+					"reinstall or contact developers if this continues", false);
 			e.printStackTrace();
 		}
 

@@ -1,3 +1,10 @@
+/*
+
+	FileName: Login.java
+	Author(s): Sebastian Cypert
+	Jobs: it is the contoller for the Login Scene
+
+ */
 package PopMail.Controllers;
 
 import static PopMail.Mailing.*;

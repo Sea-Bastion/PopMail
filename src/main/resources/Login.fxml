@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
 
+	FileName: Login.fxml
+	Author(s): Sebastian Cypert
+	Jobs: defines the layout for the login scene
+
+-->
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
