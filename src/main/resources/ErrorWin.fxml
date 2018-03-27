@@ -13,7 +13,7 @@
 			prefWidth="450.0"
 			xmlns="http://javafx.com/javafx/8.0.60"
 			xmlns:fx="http://javafx.com/fxml/1"
-			stylesheets="css/theme.css">
+			stylesheets="css/Theme.css">
 
 	
 	<HBox spacing="15">

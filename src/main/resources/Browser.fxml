@@ -6,22 +6,25 @@
 	Jobs: defines the scene layout for the Email browser window
 
 -->
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
+<?import popMail.classes.ScrollBar?>
+<?import javafx.geometry.Insets?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="PopMail.Controllers.Browser">
+            fx:controller="popMail.controllers.Browser"
+            fx:id="Root"
+            stylesheets="css/Theme.css">
 
 	<center>
 		<HBox>
-			<ScrollPane minWidth="220">
-				<VBox fx:id="SelectorBox"/>
-			</ScrollPane>
-			<StackPane prefWidth="Infinity" fx:id="EmailView"/>
+			<StackPane minWidth="200" prefHeight="Infinity">
+				<padding>
+					<Insets topRightBottomLeft="0"/>
+				</padding>
+				<VBox fx:id="SelectorBox" styleClass="vbox" onScroll="#SelectorScroll"/>
+				<ScrollBar StackPane.alignment="CENTER_RIGHT" maxWidth="8" fx:id="EmailScroll" component="$SelectorBox"/>
+			</StackPane>
+			<StackPane prefWidth="Infinity" prefHeight="Infinity" fx:id="EmailView"/>
 		</HBox>
 	</center>
 </BorderPane>

@@ -16,9 +16,9 @@
 <?import javafx.geometry.Insets?>
 <StackPane xmlns="http://javafx.com/javafx"
            xmlns:fx="http://javafx.com/fxml"
-           fx:controller="PopMail.Controllers.Login"
-           fx:id="Pane"
-           stylesheets="css/theme.css"
+           fx:controller="popMail.controllers.Login"
+           fx:id="Root"
+           stylesheets="css/Theme.css"
            prefHeight="400.0" prefWidth="350.0">
 
 	<VBox alignment="CENTER">

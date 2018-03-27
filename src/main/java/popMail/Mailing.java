@@ -5,9 +5,9 @@
 	Job: contains static functions need for mailing such as a send function or a login function
 
  */
-package PopMail;
+package popMail;
 
-import PopMail.Classes.ErrorWin;
+import popMail.classes.ErrorWin;
 
 import javax.mail.*;
 import java.util.Properties;

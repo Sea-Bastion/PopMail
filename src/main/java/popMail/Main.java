@@ -5,22 +5,17 @@
 	Job: It is the starting point of the program. It contains global variables and is responsible for opening the window
 
  */
-package PopMail;
+package popMail;
 
-import PopMail.Classes.ErrorWin;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import javax.mail.Session;
 import javax.mail.Store;
-import java.net.URL;
 
-import static PopMail.Controllers.Browser.LoadBrowser;
-import static PopMail.Controllers.Login.LoadLogin;
-import static PopMail.Mailing.Login;
+import static popMail.controllers.Browser.LoadBrowser;
+import static popMail.Mailing.Login;
+import static popMail.controllers.Login.LoadLogin;
 
 public class Main extends Application {
 
@@ -29,6 +24,7 @@ public class Main extends Application {
 
 	public void start(Stage stage) throws Exception {
 		LoadLogin(stage);
+		LoadBrowser(stage);
 		stage.show();
 	}
 

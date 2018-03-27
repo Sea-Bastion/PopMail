@@ -1,6 +1,6 @@
-package PopMail.Classes;
+package popMail.classes;
 
-import PopMail.FixHandler;
+import popMail.FixHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

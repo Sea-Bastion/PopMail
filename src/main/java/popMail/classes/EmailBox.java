@@ -5,14 +5,12 @@
 	Jobs: it is the node used for displaying Emails to be selected
 
  */
-package PopMail.Classes;
+package popMail.classes;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
-import javax.mail.Address;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.internet.InternetAddress;

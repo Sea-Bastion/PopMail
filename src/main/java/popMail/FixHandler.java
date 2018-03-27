@@ -1,4 +1,4 @@
-package PopMail;
+package popMail;
 
 import javafx.scene.control.Label;
 

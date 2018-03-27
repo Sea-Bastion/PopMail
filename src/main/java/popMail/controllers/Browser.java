@@ -5,19 +5,22 @@
 	Jobs: Loads in and controlls the Email browser
 
  */
-package PopMail.Controllers;
+package popMail.controllers;
 
-import PopMail.Classes.EmailBox;
-import PopMail.Classes.ErrorWin;
-import PopMail.Main;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.BorderPane;
+import popMail.classes.EmailBox;
+import popMail.classes.ErrorWin;
+import popMail.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import popMail.classes.ScrollBar;
 
 import javax.mail.Folder;
 import javax.mail.Message;
@@ -31,16 +34,23 @@ public class Browser implements Initializable {
 	VBox SelectorBox;
 	@FXML
 	StackPane EmailView;
+	@FXML
+	ScrollBar EmailScroll;
+	@FXML
+	BorderPane Root;
 
 
-	Folder CurrentFolder;
+	private Folder CurrentFolder;
 
 	public static void LoadBrowser(Stage window){
 		URL BrowserPath = Browser.class.getClassLoader().getResource("Browser.fxml");
 
 		try{
 			if(BrowserPath == null) throw new NullPointerException();
-			window.setScene(new Scene(FXMLLoader.load(BrowserPath),900 ,506.25));
+			FXMLLoader fxml = new FXMLLoader(BrowserPath);
+			fxml.setClassLoader(Browser.class.getClassLoader());
+			window.setScene(new Scene(fxml.load(),900 ,506.25));
+			window.setResizable(true);
 
 		}catch(Exception e){
 			e.printStackTrace();
@@ -51,6 +61,7 @@ public class Browser implements Initializable {
 
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
+		//-----------------------load in emails------------------------
 		try {
 			CurrentFolder = Main.store.getFolder("Inbox");
 
@@ -102,5 +113,11 @@ public class Browser implements Initializable {
 			new ErrorWin("Failed to Load any messages",
 					"program cannot load messages from current folder for unknown reason", true);
 		}
+	}
+
+	@FXML
+	void SelectorScroll(ScrollEvent event){
+		if(!(SelectorBox.getLayoutY() > 0 && event.getDeltaY() < 0))
+			SelectorBox.setLayoutY(SelectorBox.getLayoutY()-event.getDeltaY());
 	}
 }
